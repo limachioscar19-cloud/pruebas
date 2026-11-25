@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Happy Warmi Spa - Bienestar, Armonía & Rituales</title>
+  
+  <!-- SEO & PWA Metatags -->
+  <meta name="description" content="Rituales holísticos para un equilibrio real en Happy Warmi Spa. Masajes relajantes, faciales y experiencias zen atendidos por Maya, Rosa y Moy.">
+  <meta name="theme-color" content="#5A4978">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Happy Warmi">
+  
+  <!-- Manifest & Favicons -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CAPA FLOTANTE DE MARIPOSAS ANIMADAS (IMÁGENES EN ./imagenes_spa/)
+       ========================================================================== -->
+  <div class="butterfly-decor-layer" aria-hidden="true">
+    <div class="floating-butterfly butterfly-pos-1">
+      <img src="./imagenes_spa/mariposa-dorada-zen.svg" class="butterfly-img-decor" alt="Mariposa Dorada Zen">
+    </div>
+    <div class="floating-butterfly butterfly-pos-2">
+      <img src="./imagenes_spa/mariposa-lila-armonia.svg" class="butterfly-img-decor" alt="Mariposa Lila Armonía">
+    </div>
+    <div class="floating-butterfly butterfly-pos-3">
+      <img src="./imagenes_spa/mariposa-loto-wellness.svg" class="butterfly-img-decor" alt="Mariposa Loto Wellness">
+    </div>
+    <div class="floating-butterfly butterfly-pos-4">
+      <img src="./imagenes_spa/mariposa-monarca-spa.svg" class="butterfly-img-decor" alt="Mariposa Monarca Spa">
+    </div>
+    <div class="floating-butterfly butterfly-pos-5">
+      <img src="./imagenes_spa/mariposa-botanica-zen.svg" class="butterfly-img-decor" alt="Mariposa Botánica Zen">
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HEADER: LEMA, MARCA Y NAVEGACIÓN
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-motto-bar">
+      HAPPY WARMI SPA · BIENESTAR · ARMONÍA · EQUILIBRIO
+    </div>
+    <div class="container">
+      <div class="header-main-nav">
+        <!-- Logo con mariposa Happy Warmi Spa -->
+        <div class="brand-logo view-trigger-btn" data-target-view="inicio" role="button" aria-label="Ir al inicio de Happy Warmi Spa">
+          <img src="./imagenes_spa/mariposa-dorada-zen.svg" alt="Logo Happy Warmi Spa" style="width: 38px; height: 38px; object-fit: contain;">
+          <div class="brand-text">
+            <span class="brand-name">Happy Warmi</span>
+            <span class="brand-tagline">SPA & BIENESTAR</span>
+          </div>
+        </div>
+
+        <!-- Botones de navegación en desktop -->
+        <nav class="view-nav-buttons" aria-label="Navegación principal">
+          <button class="view-btn-tab active" data-target-view="inicio">
+            <span>Inicio</span>
+          </button>
+          <button class="view-btn-tab" data-target-view="experiencias">
+            <span>Experiencias</span>
+          </button>
+          <button class="view-btn-tab" data-target-view="reserva">
+            <span>Reserva tu cita</span>
+          </button>
+          <button class="view-btn-tab" data-target-view="cosas-spa">
+            <span>Cosas del Spa</span>
+          </button>
+          <button class="view-btn-tab" data-target-view="espacio">
+            <span>Nuestro Espacio</span>
+          </button>
+        </nav>
+
+        <!-- Botón de búsqueda, Mis Citas, acceso administrativo y CTA Reservar -->
+        <div class="header-actions">
+          <button class="search-toggle-btn" id="searchToggleBtn" aria-label="Buscar tratamientos">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- Botón Mis Citas / Cancelar -->
+          <button class="btn-pill" id="openMyBookingsBtn" style="background: rgba(90, 73, 120, 0.08); color: var(--primary-purple); font-size: 0.78rem; padding: 0.45rem 0.85rem;" title="Ver y Cancelar Citas">
+            <span>📋 Mis Citas</span>
+          </button>
+
+          <!-- Acceso Exclusivo al Panel de Administración (con PIN de seguridad) -->
+          <button class="btn-pill" id="openAdminAuthModalBtn" style="background: rgba(90, 73, 120, 0.08); color: var(--primary-purple); font-size: 0.78rem; padding: 0.45rem 0.85rem;" title="Acceso al Panel de Control y Bitácora para el Administrador">
+            <span>🔒 Ingresar</span>
+          </button>
+
+          <button class="btn-pill btn-primary view-trigger-btn" data-target-view="reserva">
+            <span>Reservar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       ESCENARIO PRINCIPAL: PANELES DESPLEGABLES (SPA CERO SCROLL)
+       ========================================================================== -->
+  <main class="main-stage-container">
+    <div class="container">
+
+      <!-- ====================================================================
+           PANEL 1: INICIO (HERO SECTION CON MARIPOSAS & BOTÓN PWA)
+           ==================================================================== -->
+      <section class="spa-view-panel active" id="view-inicio">
+        <div class="hero-balanced-grid">
+          <!-- Columna izquierda: Mensaje de bienvenida -->
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <img src="./imagenes_spa/mariposa-lila-armonia.svg" alt="Mariposa" style="width: 22px; height: 22px; display: inline-block; vertical-align: middle;">
+              <span>UN VIAJE HACIA TU BIENESTAR INTERIOR</span>
+            </div>
+
+            <h1 class="hero-title">
+              Happy Warmi Spa
+            </h1>
+
+            <p class="hero-subtitle">
+              Armonía, equilibrio y renovación en cada detalle. Cuidado holístico brindado con devoción por Maya, Rosa y Moy.
+            </p>
+
+            <!-- Acciones en Inicio -->
+            <div class="hero-actions-group">
+              <button class="btn-pill btn-primary view-trigger-btn" data-target-view="reserva">
+                <span>Reserva tu experiencia</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+              <button class="btn-pill btn-secondary view-trigger-btn" data-target-view="experiencias">
+                <span>Ver Experiencias</span>
+              </button>
+
+              <!-- Botón PWA -->
+              <button class="btn-pwa-badge trigger-pwa-install" id="homePwaInstallBtn" title="Instalar aplicación en tu dispositivo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+                <span>Instalar App PWA</span>
+              </button>
+            </div>
+
+            <!-- 4 Píldoras de atributos interactivos -->
+            <div class="hero-features-row">
+              <div class="feature-pill-badge view-trigger-btn" data-target-view="experiencias">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3c-1.5 3-4 6-4 9a4 4 0 0 0 8 0c0-3-2.5-6-4-9z"/>
+                  <path d="M8 12c-3-1-6 0-7 2s1 5 4 5c2 0 4-1 5-3"/>
+                  <path d="M16 12c3-1 6 0 7 2s-1 5-4 5c-2 0-4-1-5-3"/>
+                </svg>
+                <span>Relájate</span>
+              </div>
+
+              <div class="feature-pill-badge view-trigger-btn" data-target-view="experiencias">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/>
+                </svg>
+                <span>Renueva</span>
+              </div>
+
+              <div class="feature-pill-badge view-trigger-btn" data-target-view="experiencias">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3v18M6 8l6-3 6 3M3 14l3-6 3 6a3 3 0 0 1-6 0zm12 0l3-6 3 6a3 3 0 0 1-6 0z"/>
+                </svg>
+                <span>Equilibra</span>
+              </div>
+
+              <div class="feature-pill-badge view-trigger-btn" data-target-view="cosas-spa">
+                <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span>Cosas del Spa</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: Imagen y silueta con mariposa decorativa -->
+          <div class="hero-visual">
+            <div class="hero-image-wrap">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Tratamiento de relajación en Happy Warmi Spa" loading="eager" decoding="async">
+            </div>
+
+            <div class="hero-floating-quote">
+              <img src="./imagenes_spa/mariposa-dorada-zen.svg" alt="Mariposa Zen" style="width: 32px; height: 32px; object-fit: contain;">
+              <p>"En Happy Warmi florece tu serenidad y paz interior"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 2: EXPERIENCIAS
+           ==================================================================== -->
+      <section class="spa-view-panel" id="view-experiencias">
+        <div class="view-panel-inner">
+          <div class="section-header-compact">
+            <div>
+              <h2 class="section-title">Nuestras Experiencias</h2>
+              <p class="section-subtitle">Rituales holísticos en Happy Warmi Spa</p>
+            </div>
+            <button class="btn-pill btn-primary view-trigger-btn" data-target-view="reserva">
+              <span>Agendar cita directa</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="experiences-grid-compact">
+            <!-- 1. Masaje Relajante -->
+            <div class="experience-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80" alt="Masaje Relajante" loading="lazy" decoding="async">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Masaje Relajante</h3>
+                <p class="card-desc">Libera tensiones musculares y conecta con la profunda tranquilidad.</p>
+                <div class="card-meta-row">
+                  <span class="meta-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    60 min
+                  </span>
+                  <span class="meta-price">Bs 40</span>
+                </div>
+                <button class="card-btn deploy-reserve-btn" data-target-id="masaje-relajante">Reservar ahora</button>
+              </div>
+            </div>
+
+            <!-- 2. Facial Asiático -->
+            <div class="experience-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Facial Asiático" loading="lazy" decoding="async">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Facial Asiático Glow</h3>
+                <p class="card-desc">Limpieza profunda, nutrición orgánica y rejuvenecimiento natural.</p>
+                <div class="card-meta-row">
+                  <span class="meta-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    60 min
+                  </span>
+                  <span class="meta-price">Bs 45</span>
+                </div>
+                <button class="card-btn deploy-reserve-btn" data-target-id="facial-asiatico">Reservar ahora</button>
+              </div>
+            </div>
+
+            <!-- 3. Ritual Zen -->
+            <div class="experience-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Ritual Zen" loading="lazy" decoding="async">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Ritual Zen Warmi</h3>
+                <p class="card-desc">Armonización de chakras con cuencos tibetanos, aceites y piedras calientes.</p>
+                <div class="card-meta-row">
+                  <span class="meta-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    90 min
+                  </span>
+                  <span class="meta-price">Bs 60</span>
+                </div>
+                <button class="card-btn deploy-reserve-btn" data-target-id="ritual-zen">Reservar ahora</button>
+              </div>
+            </div>
+
+            <!-- 4. Aromaterapia -->
+            <div class="experience-card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Aromaterapia" loading="lazy" decoding="async">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Aromaterapia & Esencias</h3>
+                <p class="card-desc">Equilibrio emocional a través de orquídeas aromáticas y lavanda silvestre.</p>
+                <div class="card-meta-row">
+                  <span class="meta-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    60 min
+                  </span>
+                  <span class="meta-price">Bs 40</span>
+                </div>
+                <button class="card-btn deploy-reserve-btn" data-target-id="aromaterapia">Reservar ahora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 3: RESERVA TU CITA (CON GRUPOS & PERSONAL LIMITADO A MAYA, ROSA Y MOY)
+           ==================================================================== -->
+      <section class="spa-view-panel" id="view-reserva">
+        <div class="booking-compact-wrapper">
+          <div class="booking-header-row">
+            <div>
+              <h2 class="section-title">Reserva tu cita</h2>
+              <p class="section-subtitle">Capacidad máxima: 3 terapeutas (Maya, Rosa y Moy)</p>
+            </div>
+            
+            <div class="booking-stepper">
+              <div class="step-item active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-label">Servicio</span>
+              </div>
+              <div class="step-item" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-label">Grupo & Personal</span>
+              </div>
+              <div class="step-item" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-label">Fecha y Hora</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-two-col-layout">
+            <!-- Columna izquierda: Selección de Experiencia, Grupo y Especialista -->
+            <div>
+              <div class="form-substep-label">
+                1. Selecciona tu experiencia
+              </div>
+              <div class="experience-selection-grid">
+                <!-- Masaje Relajante -->
+                <div class="experience-select-item selected" data-id="masaje-relajante" data-name="Masaje Relajante" data-duration="60 min" data-price="40">
+                  <div class="exp-check-badge">✓</div>
+                  <div class="exp-thumb">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=300&q=80" alt="Masaje Relajante" loading="lazy" decoding="async">
+                  </div>
+                  <span class="exp-name">Masaje Relajante</span>
+                </div>
+
+                <!-- Facial Asiático -->
+                <div class="experience-select-item" data-id="facial-asiatico" data-name="Facial Asiático Glow" data-duration="60 min" data-price="45">
+                  <div class="exp-check-badge">✓</div>
+                  <div class="exp-thumb">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=300&q=80" alt="Facial Asiático" loading="lazy" decoding="async">
+                  </div>
+                  <span class="exp-name">Facial Asiático</span>
+                </div>
+
+                <!-- Ritual Zen -->
+                <div class="experience-select-item" data-id="ritual-zen" data-name="Ritual Zen Warmi" data-duration="90 min" data-price="60">
+                  <div class="exp-check-badge">✓</div>
+                  <div class="exp-thumb">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=300&q=80" alt="Ritual Zen" loading="lazy" decoding="async">
+                  </div>
+                  <span class="exp-name">Ritual Zen</span>
+                </div>
+
+                <!-- Aromaterapia -->
+                <div class="experience-select-item" data-id="aromaterapia" data-name="Aromaterapia & Esencias" data-duration="60 min" data-price="40">
+                  <div class="exp-check-badge">✓</div>
+                  <div class="exp-thumb">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=300&q=80" alt="Aromaterapia" loading="lazy" decoding="async">
+                  </div>
+                  <span class="exp-name">Aromaterapia</span>
+                </div>
+              </div>
+
+              <!-- Selector de personas: Individual, Pareja, Grupo -->
+              <div class="form-substep-label" style="margin-top: 0.8rem;">
+                2. ¿Para cuántas personas es la cita?
+              </div>
+              <div class="group-size-container" id="groupSizeContainer">
+                <button type="button" class="group-size-pill selected" data-persons="1">
+                  <span class="pill-main-text">👤 1 Persona</span>
+                  <span class="pill-sub-text">1 Terapeuta</span>
+                </button>
+                <button type="button" class="group-size-pill" data-persons="2">
+                  <span class="pill-main-text">👥 2 Personas (Dúo)</span>
+                  <span class="pill-sub-text">2 Terapeutas</span>
+                </button>
+                <button type="button" class="group-size-pill" data-persons="3">
+                  <span class="pill-main-text">✨ 3 Personas (Grupo)</span>
+                  <span class="pill-sub-text">Maya, Rosa y Moy</span>
+                </button>
+              </div>
+
+              <!-- Especialistas (Únicamente 3: Maya, Rosa, Moy) -->
+              <div class="form-substep-label" style="margin-top: 0.6rem;">
+                3. Terapeuta encargado(a)
+              </div>
+              <div class="specialists-list-compact" id="specialistsListContainer">
+                <div class="specialist-card selected" data-id="maya" data-name="Maya" data-role="Masajes y Terapias">
+                  <div class="specialist-avatar">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&q=80" alt="Maya" loading="lazy" decoding="async">
+                  </div>
+                  <span class="specialist-name">Maya</span>
+                  <span class="specialist-role">Masajes</span>
+                </div>
+
+                <div class="specialist-card" data-id="rosa" data-name="Rosa" data-role="Faciales & Piel">
+                  <div class="specialist-avatar">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&q=80" alt="Rosa" loading="lazy" decoding="async">
+                  </div>
+                  <span class="specialist-name">Rosa</span>
+                  <span class="specialist-role">Faciales</span>
+                </div>
+
+                <div class="specialist-card" data-id="moy" data-name="Moy" data-role="Rituales Zen & Armonía">
+                  <div class="specialist-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80" alt="Moy" loading="lazy" decoding="async">
+                  </div>
+                  <span class="specialist-name">Moy</span>
+                  <span class="specialist-role">Rituales</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna derecha: Calendario y Horarios Dinámicos con bloqueo por ocupación -->
+            <div>
+              <div class="form-substep-label">
+                4. Selecciona fecha y hora disponible
+              </div>
+              <div class="datetime-selector-box">
+                <div class="calendar-header">
+                  <span class="calendar-month-title" id="calendarMonthTitle">Abril 2025</span>
+                  <div class="cal-nav-btns">
+                    <button class="cal-btn" id="prevMonthBtn" aria-label="Mes anterior">‹</button>
+                    <button class="cal-btn" id="nextMonthBtn" aria-label="Mes siguiente">›</button>
+                  </div>
+                </div>
+
+                <div class="calendar-weekdays">
+                  <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                </div>
+
+                <div class="calendar-days-grid" id="calendarDaysGrid">
+                  <!-- Días renderizados con JS -->
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                  <span style="font-size: 0.74rem; font-weight: 700; color: var(--text-primary);">
+                    Horarios disponibles:
+                  </span>
+                  <span id="slotStatusSummary" style="font-size: 0.7rem; color: var(--text-muted);">
+                    (Se cierra la hora si Maya, Rosa y Moy están ocupados)
+                  </span>
+                </div>
+
+                <div class="time-slots-grid-compact" id="timeSlotsGridContainer">
+                  <button type="button" class="time-slot-pill" data-time="09:00">09:00</button>
+                  <button type="button" class="time-slot-pill selected" data-time="10:00">10:00</button>
+                  <button type="button" class="time-slot-pill" data-time="11:00">11:00</button>
+                  <button type="button" class="time-slot-pill" data-time="12:00">12:00</button>
+                  <button type="button" class="time-slot-pill" data-time="13:00">13:00</button>
+                  <button type="button" class="time-slot-pill" data-time="15:00">15:00</button>
+                  <button type="button" class="time-slot-pill" data-time="16:00">16:00</button>
+                  <button type="button" class="time-slot-pill" data-time="17:00">17:00</button>
+                  <button type="button" class="time-slot-pill" data-time="18:00">18:00</button>
+                </div>
+              </div>
+
+              <button class="btn-pill btn-primary booking-continue-btn" id="continueBookingBtn">
+                <span>Continuar con mi reserva</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 4: COSAS DEL SPA (REDES, WHATSAPP, UBICACIÓN & BITÁCORA LIVE UPDS)
+           ==================================================================== -->
+      <section class="spa-view-panel" id="view-cosas-spa">
+        <div class="view-panel-inner">
+          <div class="section-header-compact">
+            <div>
+              <h2 class="section-title">Cosas del Spa & Comunidad</h2>
+              <p class="section-subtitle">Conecta con Happy Warmi Spa, redes sociales, WhatsApp y Stream en directo</p>
+            </div>
+            <a href="https://wa.me/59178901234?text=Hola%20Happy%20Warmi%20Spa,%20deseo%20consultar%20sobre%20tratamientos" 
+               target="_blank" rel="noopener noreferrer" class="btn-pill" style="background:#25D366; color:#FFF; font-weight:700;">
+              <span>💬 Escríbenos al WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="spa-things-grid">
+            <!-- Tarjeta 1: WhatsApp y Canales directos -->
+            <div class="contact-card-zen whatsapp-featured-card">
+              <div>
+                <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
+                  <span style="font-size:1.6rem;">📱</span>
+                  <div>
+                    <h3 style="font-size:1.15rem; color:#128C7E;">WhatsApp & Teléfonos</h3>
+                    <p style="font-size:0.75rem; color:var(--text-secondary);">Atención directa e inmediata con Maya, Rosa y Moy</p>
+                  </div>
+                </div>
+
+                <div style="font-size:0.84rem; line-height:1.6; margin:0.8rem 0; color:var(--text-primary);">
+                  <div>🟢 <strong>WhatsApp Reservas:</strong> +591 789-01234</div>
+                  <div>📞 <strong>Teléfono Fijo Spa:</strong> +591 (2) 245-8900</div>
+                  <div>⏰ <strong>Horario:</strong> Lunes a Sábado de 09:00 a 19:00 hrs</div>
+                  <div>📍 <strong>Dirección:</strong> Av. Arce #2519 esq. Montevideo, Sopocachi (La Paz - Bolivia)</div>
+                </div>
+              </div>
+
+              <div class="social-button-grid">
+                <a href="https://wa.me/59178901234?text=Hola%20Happy%20Warmi%20Spa,%20deseo%20agendar%20una%20sesi%C3%B3n" 
+                   target="_blank" rel="noopener noreferrer" class="social-link-pill whatsapp-link">
+                  <span>💬 Chatear por WhatsApp (+591 78901234)</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tarjeta 2: Redes Sociales -->
+            <div class="contact-card-zen">
+              <div>
+                <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
+                  <span style="font-size:1.6rem;">🌐</span>
+                  <div>
+                    <h3 style="font-size:1.15rem; color:var(--primary-purple);">Nuestras Redes Sociales</h3>
+                    <p style="font-size:0.75rem; color:var(--text-secondary);">Síguenos para consejos zen, promociones y sorteos</p>
+                  </div>
+                </div>
+
+                <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:1rem;">
+                  Forma parte de la comunidad Happy Warmi y accede a sesiones guiadas de meditación y aromaterapia.
+                </p>
+              </div>
+
+              <div class="social-button-grid">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                  <span>📸 Instagram</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                  <span>📘 Facebook</span>
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                  <span>🎵 TikTok Live</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                  <span>▶️ YouTube</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================================================================
+               SECCIÓN LIVE & COMUNIDAD DE HAPPY WARMI SPA
+               Interacciones y ofertas en vivo (los eventos se registran en Supabase)
+               ================================================================ -->
+          <div style="margin-top: 1.8rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.8rem;">
+              <div>
+                <h3 style="color: var(--primary-purple); font-size: 1.25rem;">
+                  ✨ Transmisión en Vivo & Ofertas Relámpago
+                </h3>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                  Conéctate con Maya, Rosa y Moy. Aprovecha descuentos flash, envía consultas en directo y comparte amor holístico.
+                </p>
+              </div>
+              <span style="font-size: 0.76rem; background: rgba(34, 197, 94, 0.15); color: #15803D; padding: 0.35rem 0.75rem; border-radius: 999px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+                <span style="width: 8px; height: 8px; background: #22C55E; border-radius: 50%; display: inline-block;"></span>
+                En Directo con el Equipo
+              </span>
+            </div>
+
+            <!-- Contenedor con Delegación de Eventos -->
+            <div id="liveSpaContainer" class="stream-box">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem; flex-wrap:wrap; gap:0.5rem;">
+                <p style="font-weight:700; font-size:0.85rem; color:#F8FAFC;">
+                  🔴 SALA EN VIVO: Aromaterapia y Cuidado Zen
+                </p>
+                <span style="font-size:0.75rem; color:#94A3B8; background:rgba(255,255,255,0.08); padding:0.2rem 0.6rem; border-radius:12px;">
+                  Terapeutas en Directo: Maya, Rosa & Moy
+                </span>
+              </div>
+
+              <!-- Botones de ofertas (Event delegation click) -->
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem;">
+                <button class="btn-oferta" data-prod="Masaje Relajante Express (30% OFF)">
+                  💆 Comprar Masaje 30% OFF
+                </button>
+                <button class="btn-oferta" data-prod="Facial Asiático Glow Relámpago">
+                  ✨ Facial Glow Relámpago
+                </button>
+                <button class="btn-oferta" data-prod="Ritual Zen Doble Pareja">
+                  🧘 Ritual Zen Dúo
+                </button>
+                <button class="btn-oferta btn-like" data-action="like" title="Haz clic o doble clic para enviar corazones">
+                  ❤️ Enviar Like al Live
+                </button>
+              </div>
+
+              <!-- Chat en tiempo real -->
+              <div style="margin-top: 0.6rem;">
+                <label for="chatInput" style="display:block; font-size:0.78rem; font-weight:600; color:#E2E8F0; margin-bottom:0.3rem;">
+                  💬 Chat del Live (Haz tu pregunta y presiona Enter):
+                </label>
+                <div style="display: flex; gap: 0.5rem;">
+                  <input type="text" id="chatInput" placeholder="Pregunta a Maya, Rosa o Moy en directo..." 
+                         style="padding:10px 12px; flex: 1; border-radius:6px; border:1px solid rgba(255,255,255,0.2); background:#0F172A; color:#FFFFFF; font-family:inherit; font-size:0.85rem; outline:none;">
+                  <button type="button" id="btnSendChat" class="btn-pill btn-primary" style="padding: 0 1rem; font-size: 0.8rem;">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Feed comunitario de mensajes -->
+              <div style="margin-top: 1rem;">
+                <h4 style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                  Mensajes de la Comunidad en Vivo:
+                </h4>
+                <div id="liveChatFeed" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.8rem; max-height: 140px; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                  <div style="color: #94A3B8;">🌸 <em>Maya: "¡Bienvenidos al espacio de bienestar de Happy Warmi! ¿En qué podemos consentirte hoy?"</em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PANEL 5: NUESTRO ESPACIO & RITUALES
+           ==================================================================== -->
+      <section class="spa-view-panel" id="view-espacio">
+        <div class="space-balanced-grid">
+          <!-- Tarjeta 1: Espacio diseñado para ti -->
+          <div class="space-panel-card">
+            <div>
+              <h3 class="space-panel-title">Un espacio diseñado para ti</h3>
+              <p class="space-panel-desc">
+                Déjate envolver por la paz y armonía de Happy Warmi Spa. Salas insonorizadas, aceites esenciales puros y la calidez de nuestro equipo.
+              </p>
+              <button class="btn-pill btn-primary view-trigger-btn" data-target-view="reserva">
+                <span>Conoce nuestro spa</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="space-panel-img-wrap" style="margin-top: 0.8rem;">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Espacio interior Happy Warmi Spa" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Flor de loto sagrada -->
+          <div class="lotus-panel-card">
+            <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80" alt="Flor de loto púrpura" loading="lazy" decoding="async">
+            <div class="lotus-glow-overlay"></div>
+          </div>
+
+          <!-- Tarjeta 3: Rituales que transforman con Mariposa -->
+          <div class="rituals-panel-card">
+            <div>
+              <span class="rituals-tag">RITUALES QUE TRANSFORMAN</span>
+              <h3 class="rituals-title">
+                Bienestar hoy, una mejor versión de ti
+              </h3>
+            </div>
+
+            <img src="./imagenes_spa/mariposa-dorada-zen.svg" alt="Mariposa Decoración" style="width: 80px; height: 80px; object-fit: contain; opacity: 0.85;">
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN INFERIOR PARA MÓVILES (PWA NATIVE APP FEEL)
+       ========================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil PWA">
+    <button class="mobile-nav-item active" data-target-view="inicio" aria-label="Ir a Inicio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Inicio</span>
+    </button>
+
+    <button class="mobile-nav-item" data-target-view="experiencias" aria-label="Ver Experiencias">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 6v6l4 2"></path>
+      </svg>
+      <span>Servicios</span>
+    </button>
+
+    <button class="mobile-nav-item" data-target-view="reserva" aria-label="Reservar Cita">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <span>Reservar</span>
+    </button>
+
+    <button class="mobile-nav-item" data-target-view="cosas-spa" aria-label="Cosas del Spa y Redes">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>Cosas Spa</span>
+    </button>
+
+    <button class="mobile-nav-item" data-target-view="espacio" aria-label="Nuestro Espacio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+      <span>Espacio</span>
+    </button>
+  </nav>
+
+  <!-- ==========================================================================
+       FOOTER COMPACTO (DESKTOP)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-compact-row">
+        <div class="footer-left-info">
+          <span>© 2026 Happy Warmi Spa</span>
+          <span class="footer-motto-pill">Maya · Rosa · Moy</span>
+          <span>Armonía en cada detalle ♡</span>
+        </div>
+
+        <div class="footer-social-row">
+          <a href="https://wa.me/59178901234" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp Happy Warmi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+
+        <div class="footer-right-actions">
+          <div class="pwa-status-indicator">
+            <span class="status-dot"></span>
+            <span id="pwaStatusText">PWA Activa & Auditoría Live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: FORMULARIO DE CONFIRMACIÓN DE CITA (CON CAMPOS VALIDADOS)
+       ========================================================================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">✕</button>
+      <h3 class="modal-title">Confirmar tu Reserva</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+        Revisa los detalles y completa tus datos de contacto con validación estricta:
+      </p>
+
+      <div class="booking-summary-box">
+        <div class="summary-row">
+          <span>Experiencia:</span>
+          <strong id="summaryExpName">Masaje Relajante</strong>
+        </div>
+        <div class="summary-row">
+          <span>Personas / Grupo:</span>
+          <strong id="summaryGroupSize">1 Persona</strong>
+        </div>
+        <div class="summary-row">
+          <span>Duración:</span>
+          <strong id="summaryDuration">60 min</strong>
+        </div>
+        <div class="summary-row">
+          <span>Inversión Total:</span>
+          <strong id="summaryPrice" style="color: var(--primary-purple);">Bs 40</strong>
+        </div>
+        <div class="summary-row">
+          <span>Personal Asignado:</span>
+          <strong id="summarySpecialist">Maya (Masajes)</strong>
+        </div>
+        <div class="summary-row">
+          <span>Fecha y Hora:</span>
+          <strong id="summaryDateTime">Sábado, 19 de Abril 2025 - 10:00 hrs</strong>
+        </div>
+      </div>
+
+      <form id="confirmBookingForm" novalidate>
+        <!-- Campo Nombre: SOLO LETRAS Y ESPACIOS -->
+        <div class="booking-form-group">
+          <label class="booking-form-label" for="clientName">
+            Nombre Completo * <span style="font-size:0.7rem; color:var(--text-muted); font-weight:normal;">(Solo letras, sin números)</span>
+          </label>
+          <input type="text" id="clientName" class="booking-form-input" placeholder="Ej. Camila Morales" required autocomplete="name">
+          <div class="field-error-hint" id="clientNameError">El nombre debe contener únicamente letras y espacios (mínimo 3 caracteres).</div>
+        </div>
+
+        <!-- Campo Teléfono: SOLO NÚMEROS -->
+        <div class="booking-form-group">
+          <label class="booking-form-label" for="clientPhone">
+            Teléfono / WhatsApp * <span style="font-size:0.7rem; color:var(--text-muted); font-weight:normal;">(Solo números, 7 a 15 dígitos)</span>
+          </label>
+          <input type="tel" id="clientPhone" class="booking-form-input" placeholder="Ej. 78901234" required autocomplete="tel" inputmode="numeric">
+          <div class="field-error-hint" id="clientPhoneError">El teléfono debe contener únicamente números (entre 7 y 15 dígitos).</div>
+        </div>
+
+        <button type="submit" id="submitBookingBtn" class="btn-pill btn-primary" style="width: 100%; margin-top: 0.6rem; padding: 0.75rem;">
+          <span>Confirmar y Agendar en Happy Warmi</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: CONFIRMACIÓN EXITOSA CON CÓDIGO
+       ========================================================================== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-window" style="text-align: center;">
+      <button class="modal-close-btn" id="successCloseBtn">✕</button>
+      <div style="width: 50px; height: 50px; background: var(--primary-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; color: var(--primary-purple);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="modal-title">¡Cita Confirmada con Éxito!</h3>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.8rem;">
+        Gracias <strong id="successClientName">Cliente</strong> por elegir Happy Warmi Spa.
+      </p>
+
+      <div style="background: var(--bg-card-subtle); padding: 0.9rem; border-radius: var(--radius-sm); margin-bottom: 1rem; border: 1px dashed var(--primary-lavender);">
+        <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem;">Código de Reserva</div>
+        <div id="successBookingCode" style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary-purple); letter-spacing: 0.08em;">HWARMI-89421</div>
+        <div id="successDetails" style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.35rem;"></div>
+      </div>
+
+      <div style="display:flex; gap:0.5rem;">
+        <button class="btn-pill btn-secondary" id="btnViewMyBookingNow" style="flex:1;">
+          Ver / Cancelar Cita
+        </button>
+        <button class="btn-pill btn-primary" onclick="document.getElementById('successModal').classList.remove('active');" style="flex:1;">
+          Entendido, ¡gracias!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: GESTIÓN DE "MIS CITAS" Y CANCELACIÓN
+       ========================================================================== -->
+  <div class="modal-overlay" id="myBookingsModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="myBookingsCloseBtn">✕</button>
+      <h3 class="modal-title">📋 Mis Citas en Happy Warmi Spa</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+        Consulta el estado de tus citas o cancela justificando el motivo:
+      </p>
+
+      <div style="display:flex; gap:0.5rem; margin-bottom:0.8rem;">
+        <input type="text" id="myBookingCodeSearch" class="booking-form-input" placeholder="Buscar por código (Ej. HWARMI-89421)..." style="font-size:0.82rem;">
+        <button class="btn-pill btn-primary" id="btnSearchMyBooking" style="padding:0.4rem 0.8rem; font-size:0.78rem;">Buscar</button>
+      </div>
+
+      <div id="myBookingsListContainer" style="max-height: 280px; overflow-y: auto;">
+        <!-- Se inyectan dinámicamente con JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 4: CANCELAR CITA CON JUSTIFICACIÓN (REQUERIMIENTO OBLIGATORIO)
+       ========================================================================== -->
+  <div class="modal-overlay" id="cancelBookingModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="cancelModalCloseBtn">✕</button>
+      <h3 class="modal-title" style="color: #DC2626;">Cancelar Cita</h3>
+      <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+        Lamentamos que no puedas asistir. Por favor justifica el motivo de la cancelación para registrarlo en el sistema y en la bitácora:
+      </p>
+
+      <div class="booking-summary-box" style="margin-bottom:0.8rem;">
+        <div class="summary-row">
+          <span>Código:</span>
+          <strong id="cancelSummaryCode">HWARMI-00000</strong>
+        </div>
+        <div class="summary-row">
+          <span>Servicio:</span>
+          <strong id="cancelSummaryExp">Tratamiento</strong>
+        </div>
+        <div class="summary-row">
+          <span>Fecha y Hora:</span>
+          <strong id="cancelSummaryDateTime">Fecha</strong>
+        </div>
+      </div>
+
+      <form id="cancelBookingForm">
+        <div class="booking-form-group">
+          <label class="booking-form-label" for="cancellationReasonInput">
+            Motivo / Justificación de la cancelación *
+          </label>
+          <textarea id="cancellationReasonInput" class="cancellation-textarea" required 
+                    placeholder="Ej. Surgió un imprevisto familiar / Cambio de fecha por trabajo / Motivos de salud..."></textarea>
+          <div class="field-error-hint" id="cancelReasonError">Por favor escribe una justificación válida (mínimo 5 caracteres).</div>
+        </div>
+
+        <div style="display:flex; gap:0.5rem; margin-top:0.6rem;">
+          <button type="button" class="btn-pill btn-secondary" id="btnDismissCancellation" style="flex:1;">
+            Volver
+          </button>
+          <button type="submit" class="btn-pill" style="flex:1; background:#DC2626; color:#FFF; font-weight:700;">
+            Confirmar Cancelación
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 5: BÚSQUEDA RÁPIDA
+       ========================================================================== -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="searchModalClose">✕</button>
+      <h3 class="modal-title">Buscar Tratamiento en Happy Warmi</h3>
+      <div style="margin: 0.8rem 0;">
+        <input type="text" id="siteSearchInput" class="booking-form-input" placeholder="Escribe 'masaje', 'facial', 'zen', 'aromaterapia'..." autofocus>
+      </div>
+      <div id="searchResultsContainer" style="max-height: 240px; overflow-y: auto;">
+        <!-- Resultados generados por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 6: GUÍA INSTALACIÓN PWA
+       ========================================================================== -->
+  <div class="modal-overlay" id="pwaGuideModal">
+    <div class="modal-window" style="text-align: center;">
+      <button class="modal-close-btn" id="pwaGuideCloseBtn">✕</button>
+      <div style="width: 48px; height: 48px; background: var(--primary-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.7rem; color: var(--primary-purple);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+      </div>
+      <h3 class="modal-title">Instalar App Happy Warmi Spa</h3>
+      <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.45;">
+        Accede a tu spa y consulta tus citas sin conexión a internet:
+      </p>
+
+      <div style="text-align: left; background: var(--bg-card-subtle); padding: 0.9rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--text-primary); margin-bottom: 1rem;">
+        <div style="margin-bottom: 0.5rem;">
+          <strong>En iPhone / iPad (Safari):</strong><br>
+          Toca <strong>Compartir</strong> (ícono con flecha hacia arriba) y selecciona <strong>"Agregar a pantalla de inicio"</strong>.
+        </div>
+        <div>
+          <strong>En Android / Chrome:</strong><br>
+          Toca el menú de 3 puntos y selecciona <strong>"Instalar aplicación"</strong> o <strong>"Agregar a pantalla principal"</strong>.
+        </div>
+      </div>
+
+      <button class="btn-pill btn-primary" onclick="document.getElementById('pwaGuideModal').classList.remove('active');" style="width: 100%;">
+        ¡Entendido!
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DE ACCESO ADMINISTRATIVO (DIVISIÓN ADMIN / USUARIO NORMAL) -->
+  <div class="modal-overlay" id="adminAuthModal">
+    <div class="modal-box admin-auth-box">
+      <button class="modal-close-btn" id="closeAdminAuthModalBtn">✕</button>
+      <div style="font-size: 2.5rem; margin-bottom: 0.6rem;">🔒</div>
+      <h3 class="modal-title admin-auth-title">Acceso Administrativo</h3>
+      <p class="admin-auth-description">
+        Este panel está reservado para la supervisión del spa, gestión de reservas y la bitácora de auditoría.
+      </p>
+
+      <form id="adminAuthForm">
+        <div class="form-group admin-pin-group">
+          <label class="form-label admin-pin-label" for="adminPinInput">PIN / Contraseña de Administrador</label>
+          <input type="password" id="adminPinInput" class="form-input admin-pin-input" placeholder="Ingresa tu PIN" required autocomplete="current-password">
+          <div id="adminAuthError" style="display: none; color: #DC2626; font-size: 0.8rem; margin-top: 0.5rem; text-align: center; font-weight: 600;">
+            ⚠️ PIN incorrecto. Inténtalo de nuevo.
+          </div>
+        </div>
+
+        <div class="admin-auth-actions">
+          <button type="button" class="btn-pill btn-secondary" id="cancelAdminAuthBtn" style="flex: 1;">Cancelar</button>
+          <button type="submit" class="btn-pill btn-primary" style="flex: 1;">Entrar al Panel</button>
+        </div>
+        <p class="admin-pin-hint">
+          PIN por defecto: <code>admin123</code>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="experience-lightbox" id="experienceLightbox" aria-hidden="true" role="dialog" aria-label="Imagen ampliada">
+    <button type="button" class="experience-lightbox-close" id="experienceLightboxClose" aria-label="Cerrar imagen">×</button>
+    <img id="experienceLightboxImage" src="" alt="">
+    <p id="experienceLightboxCaption"></p>
+  </div>
+
+  <!-- TOAST NOTIFICACIÓN -->
+  <div class="toast-notification" id="toastNotification">
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toastMessage">Acción completada</span>
+  </div>
+
+  <!-- Scripts: Supabase UMD, Conector WarmiDB y App Principal -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

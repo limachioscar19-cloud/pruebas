@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="monarchWarm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD166" />
+      <stop offset="40%" stop-color="#F77F00" />
+      <stop offset="70%" stop-color="#D62828" />
+      <stop offset="100%" stop-color="#5A4978" />
+    </linearGradient>
+    <linearGradient id="monarchDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#43335A" />
+      <stop offset="100%" stop-color="#2D203F" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(0, 5)">
+    <!-- Alas Superiores -->
+    <path d="M100,82 C72,25 22,22 14,50 C6,78 24,106 52,118 C78,124 94,96 100,82 Z" 
+          fill="url(#monarchWarm)" stroke="#2D203F" stroke-width="2.5" />
+    <path d="M100,82 C128,25 178,22 186,50 C194,78 176,106 148,118 C122,124 106,96 100,82 Z" 
+          fill="url(#monarchWarm)" stroke="#2D203F" stroke-width="2.5" />
+
+    <!-- Bordes negros estilizados con perlas blancas tipo monarca -->
+    <path d="M22,35 C14,48 10,70 20,90 C32,108 50,118 52,118 C24,106 6,78 14,50 Z" fill="#2D203F" />
+    <path d="M178,35 C186,48 190,70 180,90 C168,108 150,118 148,118 C176,106 194,78 186,50 Z" fill="#2D203F" />
+
+    <!-- Alas Inferiores -->
+    <path d="M100,94 C76,104 46,110 40,136 C32,164 62,176 82,160 C96,148 98,118 100,94 Z" 
+          fill="url(#monarchWarm)" stroke="#2D203F" stroke-width="2" />
+    <path d="M100,94 C124,104 154,110 160,136 C168,164 138,176 118,160 C104,148 102,118 100,94 Z" 
+          fill="url(#monarchWarm)" stroke="#2D203F" stroke-width="2" />
+
+    <!-- Venas características monarca -->
+    <path d="M100,85 Q65,58 35,50 M100,88 Q55,75 30,80 M100,90 Q65,98 45,108" 
+          stroke="#2D203F" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M100,85 Q135,58 165,50 M100,88 Q145,75 170,80 M100,90 Q135,98 155,108" 
+          stroke="#2D203F" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M100,96 Q75,125 56,150 M100,96 Q125,125 144,150" 
+          stroke="#2D203F" stroke-width="2" stroke-linecap="round" fill="none" />
+
+    <!-- Puntos blancos perla en el contorno -->
+    <circle cx="16" cy="52" r="1.8" fill="#FFFFFF" />
+    <circle cx="14" cy="65" r="1.8" fill="#FFFFFF" />
+    <circle cx="18" cy="78" r="1.8" fill="#FFFFFF" />
+    <circle cx="26" cy="92" r="1.8" fill="#FFFFFF" />
+    <circle cx="38" cy="148" r="1.8" fill="#FFFFFF" />
+    <circle cx="48" cy="162" r="1.8" fill="#FFFFFF" />
+
+    <circle cx="184" cy="52" r="1.8" fill="#FFFFFF" />
+    <circle cx="186" cy="65" r="1.8" fill="#FFFFFF" />
+    <circle cx="182" cy="78" r="1.8" fill="#FFFFFF" />
+    <circle cx="174" cy="92" r="1.8" fill="#FFFFFF" />
+    <circle cx="162" cy="148" r="1.8" fill="#FFFFFF" />
+    <circle cx="152" cy="162" r="1.8" fill="#FFFFFF" />
+
+    <!-- Cuerpo y Cabeza -->
+    <ellipse cx="100" cy="98" rx="3.6" ry="24" fill="url(#monarchDark)" />
+    <circle cx="100" cy="70" r="5" fill="#2D203F" />
+    <circle cx="98" cy="69" r="1.2" fill="#FFFFFF" />
+    <circle cx="102" cy="69" r="1.2" fill="#FFFFFF" />
+
+    <!-- Antenas -->
+    <path d="M99,66 Q88,48 76,48" stroke="#2D203F" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <circle cx="76" cy="48" r="2.2" fill="#FFD166" />
+    <path d="M101,66 Q112,48 124,48" stroke="#2D203F" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <circle cx="124" cy="48" r="2.2" fill="#FFD166" />
+  </g>
+</svg>

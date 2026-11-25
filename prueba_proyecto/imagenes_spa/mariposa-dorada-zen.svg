@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEABB" />
+      <stop offset="50%" stop-color="#F8B500" />
+      <stop offset="100%" stop-color="#C9A96E" />
+    </linearGradient>
+    <linearGradient id="purpleWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ECE6F4" />
+      <stop offset="60%" stop-color="#8E7CAE" />
+      <stop offset="100%" stop-color="#5A4978" />
+    </linearGradient>
+    <filter id="zenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g filter="url(#zenGlow)">
+    <!-- Alas Superiores Izquierda -->
+    <path d="M100,85 C85,35 45,15 20,40 C0,60 5,95 30,110 C55,120 85,105 100,95 Z" 
+          fill="url(#purpleWingGrad)" opacity="0.85" stroke="#C9A96E" stroke-width="1.5" />
+    <path d="M95,85 C80,50 50,35 32,52 C18,66 22,90 40,100 C60,110 82,96 95,85 Z" 
+          fill="url(#goldWingGrad)" opacity="0.6" />
+
+    <!-- Alas Superiores Derecha -->
+    <path d="M100,85 C115,35 155,15 180,40 C200,60 195,95 170,110 C145,120 115,105 100,95 Z" 
+          fill="url(#purpleWingGrad)" opacity="0.85" stroke="#C9A96E" stroke-width="1.5" />
+    <path d="M105,85 C120,50 150,35 168,52 C182,66 178,90 160,100 C140,110 118,96 105,85 Z" 
+          fill="url(#goldWingGrad)" opacity="0.6" />
+
+    <!-- Alas Inferiores Izquierda -->
+    <path d="M100,98 C75,105 40,115 35,140 C30,165 55,175 75,160 C90,148 95,120 100,105 Z" 
+          fill="url(#purpleWingGrad)" opacity="0.75" stroke="#C9A96E" stroke-width="1.2" />
+    <path d="M96,102 C78,110 55,122 50,138 C48,152 62,158 75,148 C85,140 92,122 96,108 Z" 
+          fill="url(#goldWingGrad)" opacity="0.5" />
+
+    <!-- Alas Inferiores Derecha -->
+    <path d="M100,98 C125,105 160,115 165,140 C170,165 145,175 125,160 C110,148 105,120 100,105 Z" 
+          fill="url(#purpleWingGrad)" opacity="0.75" stroke="#C9A96E" stroke-width="1.2" />
+    <path d="M104,102 C122,110 145,122 150,138 C152,152 138,158 125,148 C115,140 108,122 104,108 Z" 
+          fill="url(#goldWingGrad)" opacity="0.5" />
+
+    <!-- Detalles de filigrana zen (Líneas doradas en las alas) -->
+    <path d="M100,88 Q65,65 30,55 M100,90 Q60,85 35,95 M100,92 Q70,105 48,135" 
+          stroke="#F8B500" stroke-width="1" fill="none" opacity="0.7" />
+    <path d="M100,88 Q135,65 170,55 M100,90 Q140,85 165,95 M100,92 Q130,105 152,135" 
+          stroke="#F8B500" stroke-width="1" fill="none" opacity="0.7" />
+
+    <!-- Puntos de luz dorados -->
+    <circle cx="35" cy="50" r="2.5" fill="#FFEAA7" />
+    <circle cx="48" cy="70" r="2" fill="#FFEAA7" />
+    <circle cx="165" cy="50" r="2.5" fill="#FFEAA7" />
+    <circle cx="152" cy="70" r="2" fill="#FFEAA7" />
+    <circle cx="60" cy="145" r="2" fill="#FFEAA7" />
+    <circle cx="140" cy="145" r="2" fill="#FFEAA7" />
+
+    <!-- Cuerpo estilizado de la mariposa -->
+    <ellipse cx="100" cy="98" rx="3.5" ry="24" fill="#43335A" stroke="#C9A96E" stroke-width="1" />
+    <circle cx="100" cy="70" r="5" fill="#5A4978" stroke="#F8B500" stroke-width="1" />
+
+    <!-- Antenas en espiral elegante -->
+    <path d="M99,67 C95,50 82,42 78,45 C75,47 78,52 82,50 C86,48 95,55 98,67" 
+          stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <circle cx="78" cy="45" r="2" fill="#F8B500" />
+    <path d="M101,67 C105,50 118,42 122,45 C125,47 122,52 118,50 C114,48 105,55 102,67" 
+          stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <circle cx="122" cy="45" r="2" fill="#F8B500" />
+  </g>
+</svg>
